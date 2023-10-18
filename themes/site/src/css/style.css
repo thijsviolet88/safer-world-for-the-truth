@@ -3,6 +3,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: "Piazolla";
+    src: url('../font/Piazolla.tff');
+}
+
 @layer base {
     html {
         @apply overflow-x-hidden max-w-[100vw] text-base;

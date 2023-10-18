@@ -12,27 +12,12 @@ module.exports = {
                 center: true,
             },
             colors: {
-                white: '#fff',
-                black: '#000',
-                gray: {
-                    DEFAULT: '#7C7C7C',
-                    dark: '#2a2e33',
+                white: {
+                    DEFAULT: '#fff',
+                    dark: '#F1F0EB'
                 },
-                primary: '#04DDBC',
-                secondary: '#FFDF34',
-                tertiary: '#e98150',
-            },
-            fontSize: {
-                xs: '0.75rem',
-                sm: '0.87rem',
-                base: '18px',
-                lg: '23px',
-                xl: '29px',
-                '2xl': '39px',
-                '3xl': '54px',
-            },
-            fontFamily: {
-                'markpro': ['MarkPro', 'sans-serif'],
+                black: '#000',
+                purple: '#38278f',
             },
             typography: {
                 DEFAULT: {
@@ -41,6 +26,9 @@ module.exports = {
                     },
                 },
             },
+            fontFamily: {
+                'piazzolla': ['Piazzolla', 'sans-serif'],
+            },
             plugins: {
               tailwindcss: {},
               autoprefixer: {},
@@ -48,6 +36,5 @@ module.exports = {
         }},
     plugins: [
         require('@tailwindcss/typography'),
-        // ...
     ],
 }
