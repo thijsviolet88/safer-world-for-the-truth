@@ -1,0 +1,13 @@
+/silverstripe-cache/
+/.env
+/vendor/
+/themes/simple/
+/_resources/
+/public/_resources/
+/.graphql-generated/
+/public/_graphql/
+/node_modules/
+/themes/van-bladel/dist/
+
+.idea
+error.log

@@ -1,0 +1,72 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        @apply overflow-x-hidden max-w-[100vw] text-base;
+    }
+
+    :root {
+        --dvw: 1vw
+    }
+
+    .container {
+        width: auto !important;
+        --content-padding: .5rem;
+        --content-width: 500px;
+        --content-spacing: max(var(--content-padding),calc(var(--dvw, 1vw)*50 - var(--content-width)/2));
+        box-sizing: content-box !important;
+        margin-inline:auto;
+        max-width: var(--content-width);
+        padding: 0 1rem;
+        padding-inline:var(--content-padding)}
+
+    @media (min-width: 768px) {
+        .container {
+            --content-width:770px
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .container {
+            --content-width:1020px
+        }
+    }
+
+    @media (min-width: 1280px) {
+        .container {
+            --content-padding: 4.5rem;
+            --content-width:1280px
+        }
+    }
+
+    @media (min-width: 1536px) {
+        .container {
+            --content-padding: 4.5rem;
+            --content-width:1536px
+        }
+    }
+
+    .container .container {
+        padding-inline:0
+    }
+
+    .container-inset,.container-inset-start {
+        -webkit-padding-start: var(--content-spacing);
+        padding-inline-start:var(--content-spacing)}
+
+    .container-inset,.container-inset-end {
+        -webkit-padding-end: var(--content-spacing);
+        padding-inline-end:var(--content-spacing)}
+
+    .container-extend,.container-extend-start {
+        -webkit-margin-start: calc(var(--content-spacing)*-1);
+        margin-inline-start:calc(var(--content-spacing)*-1)}
+
+    .container-extend,.container-extend-end {
+        -webkit-margin-end: calc(var(--content-spacing)*-1);
+        margin-inline-end:calc(var(--content-spacing)*-1)}
+        
+}
