@@ -3,6 +3,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap');
+
 @font-face {
     font-family: "Piazolla";
     src: url('../font/Piazolla.tff');
@@ -11,6 +13,10 @@
 @layer base {
     html {
         @apply overflow-x-hidden max-w-[100vw] text-base;
+    }
+
+    body {
+        @apply font-piazzolla leading-6;
     }
 
     :root {
@@ -47,13 +53,6 @@
         }
     }
 
-    @media (min-width: 1536px) {
-        .container {
-            --content-padding: 4.5rem;
-            --content-width:1536px
-        }
-    }
-
     .container .container {
         padding-inline:0
     }
@@ -73,5 +72,33 @@
     .container-extend,.container-extend-end {
         -webkit-margin-end: calc(var(--content-spacing)*-1);
         margin-inline-end:calc(var(--content-spacing)*-1)}
-        
+    
+    h1,
+    .as-h1 {
+        @apply font-normal text-2xl;
+    }
+
+    h2,
+    .as-h2 {
+        @apply font-medium text-xl font-piazzolla;
+    }
+
+    h3,
+    .as-h3 {
+        @apply text-lg font-piazzolla leading-6;
+    }
+}
+
+@layer components {
+    .text-small {
+        @apply text-xs italic font-light;
+    }
+
+    .header-purple {
+        @apply text-purple underline cursor-pointer hover:bg-purple hover:text-white duration-300 inline-block hover:no-underline;
+    }
+
+    .btn {
+        @apply font-anonymous-pro uppercase font-thin;
+    }
 }

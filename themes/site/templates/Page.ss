@@ -18,11 +18,11 @@
         $MetaTags(false)
         <title><% if $MetaTitle %>$MetaTitle<% else %>$Title<% end_if %></title>
     </head>
-    <body>
-        <% include Includes/Navigation %>
-        <main id="app">
+    <body id="app">
+        <main class="container py-3 space-y-10 lg:py-16">
+            <% include Includes/Navigation %>
             $Layout
+            <% include Includes/Footer %>
         </main>
-        <% include Includes/Footer %>
     </body>
 </html>

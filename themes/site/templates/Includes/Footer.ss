@@ -1,3 +1,1 @@
-<footer>
-    
-</footer>
+<app-footer></app-footer>

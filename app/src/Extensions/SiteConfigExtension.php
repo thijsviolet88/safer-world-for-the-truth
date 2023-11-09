@@ -4,23 +4,15 @@
 namespace App\Extensions;
 
 use SilverStripe\Forms\FieldList;
-use SilverStripe\Forms\TextareaField;
 use SilverStripe\Forms\TextField;
-use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
 use SilverStripe\ORM\DataExtension;
 
 class SiteConfigExtension extends DataExtension
 {
     private static $db = [
-        'Straat' => 'Varchar',
-        'Adres' => 'Varchar',
-        'Postcode' => 'Varchar',
-        'Telefoon' => 'Varchar',
-        'Plaats' => 'Varchar',
-        'Email' => 'Varchar',
-        'Facebook' => 'Varchar',
-        'Instagram' => 'Varchar',
-        'Openingstijden' => 'HTMLText',
+        'Email' => 'Varchar(255)',
+        'X' => 'Varchar(255)',
+        'Facebook' => 'Varchar(255)',
     ];
 
     public function updateCMSFields(FieldList $fields)
@@ -28,13 +20,9 @@ class SiteConfigExtension extends DataExtension
         $fields->removeByName('Tagline');
 
         $fields->addFieldsToTab('Root.Main', [
-            TextField::create('Telefoon', 'Contact nummer'),
             TextField::create('Email', 'Contact Email'),
-            TextareaField::create('Adres', 'Fysieke Addres'),
-            TextareaField::create('Postcode', 'Post code'),
+            TextField::create('X', 'X URL'),
             TextField::create('Facebook', 'Facebook URL'),
-            TextField::create('Instagram', 'Instagram URL'),
-            HTMLEditorField::create('Openingstijden', 'Openingstijden')
         ]);
     }
 }

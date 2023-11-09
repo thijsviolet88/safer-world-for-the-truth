@@ -19,15 +19,16 @@ module.exports = {
                 black: '#000',
                 purple: '#38278f',
             },
+            fontFamily: {
+                'piazzolla': ['Piazzolla', 'sans-serif'],
+                'anonymous-pro': ['Anonymous Pro', 'sans-serif'],
+            },
             typography: {
                 DEFAULT: {
                     css: {
                         maxWidth: '100ch', // add required value here
                     },
                 },
-            },
-            fontFamily: {
-                'piazzolla': ['Piazzolla', 'sans-serif'],
             },
             plugins: {
               tailwindcss: {},
