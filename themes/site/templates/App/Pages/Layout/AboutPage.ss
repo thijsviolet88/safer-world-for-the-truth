@@ -1,5 +1,5 @@
 $ElementalArea
-<section class="container text-center font-light space-y-5 lg:space-y-24 border-b pb-10">
+<section class="py-10 container text-center font-light space-y-5 lg:space-y-24 border-b pb-10 animate-fade animate-once animate-duration-500 animate-delay-500 animate-ease-in ">
     <h2>Feel free to contact us. Here are a few ways to do that:</h2>
     <ul class="flex flex-col items-center gap-y-2 text-[1.6rem] lg:text-4xl">
         <li class="hover:underline">
@@ -40,7 +40,7 @@ $ElementalArea
         </li>
     </ul>
 </section>
-<section class="px-10 pb-40 flex flex-row flex-wrap items-center justify-center gap-x-10 gap-y-10">
+<section class="py-10 px-10 pb-40 flex flex-row flex-wrap items-center justify-center gap-x-10 gap-y-10">
     <% loop $Logos %> 
         <figure>
             <img class="w-30" alt="{$Title}" src="{$URL}"/>

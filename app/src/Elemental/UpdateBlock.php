@@ -2,6 +2,7 @@
 
 namespace App\Elements;
 
+use App\Objects\Update;
 use App\Pages\UpdatePage;
 use DNADesign\Elemental\Models\BaseElement;
 use SilverStripe\Forms\NumericField;
@@ -33,6 +34,6 @@ class UpdateBlock extends BaseElement {
 
     public function getUpdatesList()
     {
-        return UpdatePage::get()->limit($this->NuberOfUpdatesShown);
+        return Update::get()->limit($this->NuberOfUpdatesShown);
     }
 }

@@ -17,12 +17,15 @@ module.exports = {
                     dark: '#F1F0EB'
                 },
                 black: '#000',
-                purple: '#38278f',
+                purple: {
+                    light: '#4934AE',
+                    DEFAULT: '#38278f',
+                },
                 grey: '#9F9F9F',
             },
             fontFamily: {
                 'piazzolla': ['Piazzolla', 'sans-serif'],
-                'anonymous-pro': ['Anonymous Pro', 'sans-serif'],
+                'anonymous': ['Anonymous Pro', 'sans-serif'],
             },
             boxShadow: {
                 '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',

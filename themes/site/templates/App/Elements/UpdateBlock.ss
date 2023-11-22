@@ -7,14 +7,14 @@
         <% if UpdatesList %>
             <ul class="border-t divide-y">
                 <% loop $UpdatesList %>
-                    <li class="my-7 lg:my-14">
+                    <li class="my-7 group lg:my-14">
                         <a href="$Link" class="py-5 space-y-2 group lg:space-y-4">
-                            <time class="block italic text-2xl font-light lg:text-3xl" datetime="{$Date}">{$Date.Format('MMMM dd, yyyy')}</time>
+                            <time class="block italic group-hover:text-purple text-2xl font-light lg:text-3xl" datetime="{$Date}">{$Date.Format('MMMM dd, yyyy')}</time>
                             <h1 class="text-center">
                                 {$Title}
-                                <svg class="h-7 w-7 inline transistion-all duration-300 group-hover:translate-x-2 lg:inline-block lg:h-14 lg:w-14" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="_24x24_On_Light_Next" data-name="24x24/On Light/Next">
-                                    <rect id="view-box" width="24" height="24" fill="#141124" opacity="0"/>
-                                    <path id="Shape" d="M10.22,9.28a.75.75,0,0,1,0-1.06l2.72-2.72H.75A.75.75,0,0,1,.75,4H12.938L10.22,1.281A.75.75,0,1,1,11.281.22l4,4a.749.749,0,0,1,0,1.06l-4,4a.75.75,0,0,1-1.061,0Z" transform="translate(4.25 7.25)" fill="#141124"/>
+                                <svg class="h-7 w-7 inline transistion-all duration-300 group-hover:text-primary group-hover:translate-x-2 lg:inline-block lg:h-14 lg:w-14" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="_24x24_On_Light_Next" data-name="24x24/On Light/Next">
+                                    <rect id="view-box" width="24" height="24" fill="currentColor" opacity="0"/>
+                                    <path id="Shape" d="M10.22,9.28a.75.75,0,0,1,0-1.06l2.72-2.72H.75A.75.75,0,0,1,.75,4H12.938L10.22,1.281A.75.75,0,1,1,11.281.22l4,4a.749.749,0,0,1,0,1.06l-4,4a.75.75,0,0,1-1.061,0Z" transform="translate(4.25 7.25)" fill="currentColor"/>
                                 </svg>
                             </h1>
                         </a>

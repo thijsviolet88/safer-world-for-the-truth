@@ -1,21 +1,20 @@
- <nav class="container space-y-6 lg:space-y-10 animate-fade animate-once animate-duration-500 animate-delay-500 animate-ease-in">
+ <nav class="pt-16 container space-y-6 lg:space-y-10 animate-fade animate-once animate-duration-500 animate-delay-500 animate-ease-in">
     <header class="flex justify-between">
         <p class="text-small lg:w-1/2">
             A Safer World For The Truth is a collaborative project between Free Press Unlimited (FPU), Committee to Protect Journalists (CPJ) and Reporters Without Borders (RSF).
         </p>
         <% if $Locales %>
-            <div class="left">Locale <span class="arrow">&rarr;</span>
                 <nav class="primary">
-                    <ul>
+                    <select>
                         <% loop $Locales %>
                             <% if IsPublished %>
-                                <li class="$LinkingMode">
+                                <option class="{$LinkingMode} border font-thin text-grey p-2 uppercase">
                                     <a href="$Link.ATT" <% if $LinkingMode != 'invalid' %>rel="alternate"
                                     hreflang="$HrefLang"<% end_if %>>$Title.XML</a>
-                                </li>
+                                </option>
                             <% end_if %>
                         <% end_loop %>
-                    </ul>
+                    </select>
                 </nav>
             </div>
         <% end_if %>

@@ -1,5 +1,5 @@
 $ElementalArea
-<section class="container pt-20">
+<section class="container pt-20 animate-fade animate-once animate-duration-500 animate-delay-500 animate-ease-in ">
     <%-- <ul class="flex flex-col">
         <% loop $UpdatesList %>
             <li class="my-7 lg:my-14">

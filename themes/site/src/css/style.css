@@ -5,14 +5,12 @@
 
 @font-face {
     font-family: "Piazzolla";
-    src: url('/themes/site/dist/font/Piazzolla.ttf');
-    font-weight: 400;
+    src: url('../font/Piazzolla.ttf');
 }
 
 @font-face {
     font-family: "AnonymousPro";
-    src: url('/themes/site/dist/font/AnonymousPro.ttf');
-    font-weight: 400;
+    src: url('../font/AnonymousPro.ttf');
 }
 
 @layer base {
@@ -114,11 +112,11 @@
     }
 
     .btn {
-        @apply font-anonymous-pro uppercase font-thin text-[0.938rem];
+        @apply font-anonymous uppercase font-thin text-[0.938rem];
     }
 
-    .btn-secondary {
-        @apply font-anonymous-pro text-center text-white w-full bg-purple;
+    input[type="submit"] {
+        @apply font-anonymous text-center text-xl text-white w-full bg-purple cursor-pointer py-8 hover:bg-purple-light;
     }
 
     .current {
@@ -126,7 +124,7 @@
     }
 
     .input {
-        @apply p-7 relative text-2xl shadow-md placeholder:text-black focus:outline-purple;
+        @apply font-anonymous p-7 relative text-2xl shadow-md placeholder:text-black focus:outline-purple;
     }
 
     .link-purple {
@@ -140,6 +138,6 @@
     }
 
     .checkbox {
-        @apply h-8 w-8 shadow-md;
+        @apply h-8 w-8 shadow-md outline-0;
     }
 }

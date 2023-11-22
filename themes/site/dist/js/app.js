@@ -16802,6 +16802,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var _icons_Cross__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./icons/Cross */ "./themes/site/src/js/components/icons/Cross.vue");
+
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   __name: 'Cookie',
@@ -16819,7 +16821,10 @@ __webpack_require__.r(__webpack_exports__);
     var __returned__ = {
       showPreferences: showPreferences,
       togglePreferences: togglePreferences,
-      ref: vue__WEBPACK_IMPORTED_MODULE_0__.ref
+      ref: vue__WEBPACK_IMPORTED_MODULE_0__.ref,
+      get iconCross() {
+        return _icons_Cross__WEBPACK_IMPORTED_MODULE_1__["default"];
+      }
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -16851,11 +16856,19 @@ __webpack_require__.r(__webpack_exports__);
     var __expose = _ref.expose;
     __expose();
     var showCollapse = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(false);
+    var scrollTarget = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(null);
     var toggleCollapse = function toggleCollapse() {
       showCollapse.value = !showCollapse.value;
+      setTimeout(function () {
+        window.scrollTo({
+          top: document.body.scrollHeight || document.documentElement.scrollHeight,
+          behavior: 'smooth'
+        });
+      }, 10);
     };
     var __returned__ = {
       showCollapse: showCollapse,
+      scrollTarget: scrollTarget,
       toggleCollapse: toggleCollapse,
       ref: vue__WEBPACK_IMPORTED_MODULE_0__.ref,
       get IconChevron() {
@@ -16925,33 +16938,45 @@ __webpack_require__.r(__webpack_exports__);
 
 var _hoisted_1 = {
   key: 0,
-  "class": "fixed bg-white-dark p-5 space-y-4 z-20 bottom-0 left-4 max-w-2xl"
+  "class": "fixed bg-white-dark z-20 bottom-0 left-4 max-w-2xl"
 };
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<header class=\"space-y-2\"><h4 class=\"uppercase font-anonymous-pro\">YOUR PREFERENCES REGARDING COOKIES ON THIS SITE</h4><p class=\"text-sm leading-relaxed\">We have placed cookies on your device to help make this website better. You can use this tool to change your cookie settings. Otherwise, we&#39;ll assume you&#39;re OK to continue.</p></header><div class=\"flex items-center gap-x-5\"><button class=\"bg-white border tracking-widest p-3 uppercase\">Accept</button><button class=\"bg-white border tracking-widest p-3 uppercase\">Preferences</button></div><p class=\"text-sm\">For more information on how we use cookies, see our cookie statement <a href=\"#\">Learn more</a></p><p class=\"text-sm leading-relaxed\">Some cookies are necessary for the functioning of ‘a Safer World for The Truth’ website. If you wish to restrict or block these cookies you can set your internet browser to do so, just click on the following link for further information: <a href=\"#\" class=\"underline\">www.aboutcookies.org</a></p>", 4);
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("legend", {
+var _hoisted_2 = {
+  "class": "relative p-10 space-y-4"
+};
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<header class=\"space-y-2\"><h4 class=\"uppercase font-bold font-anonymous-pro\">YOUR PREFERENCES REGARDING COOKIES ON THIS SITE</h4><p class=\"text-sm leading-relaxed\">We have placed cookies on your device to help make this website better. You can use this tool to change your cookie settings. Otherwise, we&#39;ll assume you&#39;re OK to continue.</p></header><div class=\"flex items-center gap-x-5\"><button class=\"bg-white border tracking-widest p-3 uppercase\">Accept</button><button class=\"bg-white border tracking-widest p-3 uppercase\">Preferences</button></div><p class=\"text-sm\">For more information on how we use cookies, see our cookie statement <a href=\"#\">Learn more</a></p><p class=\"text-sm leading-relaxed\">Some cookies are necessary for the functioning of ‘a Safer World for The Truth’ website. If you wish to restrict or block these cookies you can set your internet browser to do so, just click on the following link for further information: <a href=\"#\" class=\"underline\">www.aboutcookies.org</a></p>", 4);
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("legend", {
   "class": "uppercase font-bold"
 }, "Analytics cookies", -1 /* HOISTED */);
-var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+var _hoisted_8 = {
+  "class": "flex gap-x-2 items-center"
+};
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
   type: "checkbox",
   id: "analytics",
   name: "analytics"
 }, null, -1 /* HOISTED */);
-var _hoisted_8 = {
+var _hoisted_10 = {
   "for": "analytics"
 };
-var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("legend", {
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("legend", {
   "class": "uppercase font-bold"
 }, "Marketing cookies", -1 /* HOISTED */);
-var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+var _hoisted_12 = {
+  "class": "flex gap-x-2 items-center"
+};
+var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
   type: "checkbox",
   id: "marketing",
   name: "marketing"
 }, null, -1 /* HOISTED */);
-var _hoisted_11 = {
+var _hoisted_14 = {
   "for": "marketing"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return $setup.showPreferences ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [_hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [_hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.analytics), 1 /* TEXT */)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [_hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", _hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.marketing), 1 /* TEXT */)])])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
+  return $setup.showPreferences ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["iconCross"], {
+    onClick: $setup.togglePreferences,
+    "class": "h-3 w-3 absolute top-5 right-5 cursor-pointer"
+  }), _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [_hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [_hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", _hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.analytics), 1 /* TEXT */)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [_hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [_hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", _hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.marketing), 1 /* TEXT */)])])])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
     key: 1,
     onClick: $setup.togglePreferences,
     "class": "uppercase border fixed z-20 -bottom-1 text-xs left-6 p-4 tracking-widest bg-white"
@@ -16972,23 +16997,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
-var _hoisted_1 = {
-  "class": "shadow-3xl bg-white fixed bottom-0 left-0 right-0 z-10"
-};
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, "Be part of A Safer World For the Truth", -1 /* HOISTED */);
-var _hoisted_3 = {
-  key: 0,
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, "Be part of A Safer World For the Truth", -1 /* HOISTED */);
+var _hoisted_2 = {
+  ref: "scrollTarget",
   "class": "bg-black transistion-all duration-300"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("footer", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("header", {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("footer", {
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["shadow-3xl bg-white fixed bottom-0 left-0 right-0 z-10", {
+      'relative': $setup.showCollapse
+    }])
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("header", {
     onClick: $setup.toggleCollapse,
     "class": "p-6 text-center flex gap-x-2 items-center justify-center cursor-pointer"
-  }, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["IconChevron"], {
+  }, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["IconChevron"], {
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["transistion-all duration-300 w-4 h-4", {
       'rotate-180': $setup.showCollapse
     }])
-  }, null, 8 /* PROPS */, ["class"])]), $setup.showCollapse ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "default")])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]);
+  }, null, 8 /* PROPS */, ["class"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "default")], 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $setup.showCollapse]])], 2 /* CLASS */);
 }
 
 /***/ }),

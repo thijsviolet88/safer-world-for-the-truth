@@ -1,6 +1,8 @@
-<section class="container quote text-center text-purple space-y-3 border-y border-black py-8 px-6 lg:px-0 py-5 lg:py-12 transistion-all duration-500 animate-fade animate-once animate-duration-500 animate-delay-500 animate-ease-in">
-    <blockquote class="as-h2 font-light">
-        "{$Quote}"
-    </blockquote>
-    <p class="text-lg font-light">- {$TextUnderQuote}</p>
+<section class="container text-center text-purple border-y-2 divide-y-2 divide-y-black transistion-all duration-500 animate-fade animate-once animate-duration-500 animate-delay-500 animate-ease-in px-6">
+    <% loop $Quotes %>
+        <blockquote class="as-h2 font-light py-8 lg:py-12 ">
+            "{$Quote}"
+            <footer class="text-lg font-light mt-3">— {$Author}</footer>
+        </blockquote>
+    <% end_loop %>
 </section>

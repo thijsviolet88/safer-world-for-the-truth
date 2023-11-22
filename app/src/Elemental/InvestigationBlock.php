@@ -2,10 +2,10 @@
 
 namespace App\Elements;
 
+use App\Objects\Investigation;
 use App\Pages\InvestigationPage;
 use DNADesign\Elemental\Models\BaseElement;
 use SilverStripe\Forms\NumericField;
-use SilverStripe\Forms\TextField;
 
 class InvestigationBlock extends BaseElement {
     private static $table_name = "InvestigationBlock";
@@ -14,7 +14,7 @@ class InvestigationBlock extends BaseElement {
     private static $description = 'Investigations';
     private static $icon = 'font-icon-search';
     private static $db = [
-        'Title' => 'Text',
+        'Title' => 'Varchar(255)',
         'NuberOfInvestigationsShown' => 'Int'
     ];
 
@@ -35,6 +35,6 @@ class InvestigationBlock extends BaseElement {
 
     public function getInvestigationList()
     {
-        return InvestigationPage::get()->limit($this->NuberOfInvestigationsShown);
+        return Investigation::get()->limit($this->NuberOfInvestigationsShown);
     }
 }

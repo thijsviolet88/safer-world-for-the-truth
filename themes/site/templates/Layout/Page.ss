@@ -1,3 +1,3 @@
-<section class="space-y-8">
+<section class="py-8">
     $ElementalArea
 </section
