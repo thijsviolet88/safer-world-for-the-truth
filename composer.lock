@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "de4dcf81438b76f3fb264a1749e33aaf",
+    "content-hash": "6a8f261bd1cbc0bded3763b3ec9c94de",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -3431,6 +3431,67 @@
             "time": "2023-08-25T11:14:05+00:00"
         },
         {
+            "name": "silverstripe/spamprotection",
+            "version": "4.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/silverstripe/silverstripe-spamprotection.git",
+                "reference": "2d59501ef333573837e981578651d50bf2a9f31a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/silverstripe/silverstripe-spamprotection/zipball/2d59501ef333573837e981578651d50bf2a9f31a",
+                "reference": "2d59501ef333573837e981578651d50bf2a9f31a",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.1",
+                "silverstripe/framework": "^5"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.6",
+                "silverstripe/userforms": "^6",
+                "silverstripe/versioned": "^2",
+                "squizlabs/php_codesniffer": "^3"
+            },
+            "type": "silverstripe-vendormodule",
+            "extra": {
+                "expose": [
+                    "images"
+                ]
+            },
+            "autoload": {
+                "psr-4": {
+                    "SilverStripe\\SpamProtection\\": "code/",
+                    "SilverStripe\\SpamProtection\\Tests\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Saophalkun Ponlu",
+                    "email": "phalkunz@silverstripe.com"
+                },
+                {
+                    "name": "Will Rossiter",
+                    "email": "will@fullscreen.io"
+                }
+            ],
+            "description": "Spam protection module for SilverStripe.",
+            "keywords": [
+                "silverstripe",
+                "spamprotection"
+            ],
+            "support": {
+                "issues": "https://github.com/silverstripe/silverstripe-spamprotection/issues",
+                "source": "https://github.com/silverstripe/silverstripe-spamprotection/tree/4.1.0"
+            },
+            "time": "2023-08-30T00:00:05+00:00"
+        },
+        {
             "name": "silverstripe/vendor-plugin",
             "version": "2.0.1",
             "source": {
@@ -5372,6 +5433,84 @@
                 }
             ],
             "time": "2023-07-31T07:08:24+00:00"
+        },
+        {
+            "name": "tractorcow/silverstripe-fluent",
+            "version": "7.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tractorcow-farm/silverstripe-fluent.git",
+                "reference": "86c780e63297e41209c5a99fe22c8793c596d3f4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tractorcow-farm/silverstripe-fluent/zipball/86c780e63297e41209c5a99fe22c8793c596d3f4",
+                "reference": "86c780e63297e41209c5a99fe22c8793c596d3f4",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": "^8.1",
+                "silverstripe/admin": "^2",
+                "silverstripe/framework": "^5",
+                "silverstripe/vendor-plugin": "^2",
+                "silverstripe/versioned": "^2",
+                "symbiote/silverstripe-gridfieldextensions": "^4"
+            },
+            "require-dev": {
+                "silverstripe/recipe-testing": "^3"
+            },
+            "suggest": {
+                "silverstripe/cms": "Localise pages"
+            },
+            "type": "silverstripe-vendormodule",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "7.x-dev"
+                },
+                "expose": [
+                    "client/dist"
+                ]
+            },
+            "autoload": {
+                "psr-4": {
+                    "TractorCow\\Fluent\\": "src/",
+                    "TractorCow\\Fluent\\Tests\\": "tests/php/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Damian Mooyman",
+                    "email": "damian.mooyman@gmail.com"
+                },
+                {
+                    "name": "Robbie Averill",
+                    "email": "robbie@silverstripe.com"
+                }
+            ],
+            "description": "Simple localisation for Silverstripe",
+            "keywords": [
+                "i18n",
+                "internationalisation",
+                "internationalization",
+                "language",
+                "locale",
+                "localisation",
+                "localization",
+                "multilingual",
+                "silverstripe",
+                "translatable",
+                "translation"
+            ],
+            "support": {
+                "issues": "http://github.com/tractorcow-farm/silverstripe-fluent/issues",
+                "source": "https://github.com/tractorcow-farm/silverstripe-fluent/tree/7.0.0"
+            },
+            "time": "2023-04-23T21:05:01+00:00"
         },
         {
             "name": "ua-parser/uap-php",

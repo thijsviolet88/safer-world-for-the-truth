@@ -3,11 +3,16 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap');
+@font-face {
+    font-family: "Piazzolla";
+    src: url('/themes/site/dist/font/Piazzolla.ttf');
+    font-weight: 400;
+}
 
 @font-face {
-    font-family: "Piazolla";
-    src: url('../font/Piazolla.tff');
+    font-family: "AnonymousPro";
+    src: url('/themes/site/dist/font/AnonymousPro.ttf');
+    font-weight: 400;
 }
 
 @layer base {
@@ -49,9 +54,15 @@
     @media (min-width: 1280px) {
         .container {
             --content-padding: 4.5rem;
-            --content-width:1280px
+            --content-width:1120px
         }
     }
+
+    @media (min-width: 1536px) {
+        .container {
+          max-width: 1200px !important;
+        }
+      }
 
     .container .container {
         padding-inline:0
@@ -75,17 +86,21 @@
     
     h1,
     .as-h1 {
-        @apply font-normal text-2xl;
+        @apply font-normal text-2xl lg:text-5xl;
     }
 
     h2,
     .as-h2 {
-        @apply font-medium text-xl font-piazzolla;
+        @apply font-medium text-xl font-piazzolla leading-relaxed lg:text-[1.8rem];
     }
 
     h3,
     .as-h3 {
         @apply text-lg font-piazzolla leading-6;
+    }
+
+    p {
+        @apply lg:text-lg;
     }
 }
 
@@ -99,6 +114,32 @@
     }
 
     .btn {
-        @apply font-anonymous-pro uppercase font-thin;
+        @apply font-anonymous-pro uppercase font-thin text-[0.938rem];
+    }
+
+    .btn-secondary {
+        @apply font-anonymous-pro text-center text-white w-full bg-purple;
+    }
+
+    .current {
+        @apply underline text-black !important;
+    }
+
+    .input {
+        @apply p-7 relative text-2xl shadow-md placeholder:text-black focus:outline-purple;
+    }
+
+    .link-purple {
+        @apply transition-all duration-500 text-purple underline cursor-pointer text-xl lg:text-[1.8rem];
+    }
+
+    .link-purple:hover,
+    .link-purple:focus {
+      color: #fff;
+      box-shadow: inset 100rem 0 0 0 #38278f;
+    }
+
+    .checkbox {
+        @apply h-8 w-8 shadow-md;
     }
 }

@@ -1,0 +1,1 @@
+<cookie analytics="{$SiteConfig.AnalyticsCookieText}" marketing="{$SiteConfig.MarketingCookieText}"></cookie>

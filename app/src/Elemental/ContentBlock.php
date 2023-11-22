@@ -7,18 +7,19 @@ use SilverStripe\AssetAdmin\Forms\UploadField;
 use SilverStripe\Assets\Image;
 use SilverStripe\Forms\DropdownField;
 use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
-use SilverStripe\Forms\TextField;
+use SilverStripe\Forms\CheckboxField;
 
 class ContentBlock extends BaseElement {
     private static $table_name = "ContentBlock";
-    private static $singular_name = "Content block";
-    private static $plural_name = 'ContentBlocks';
+    private static $singular_name = "Content";
+    private static $plural_name = 'Content';
     private static $description = 'Content block';
     private static $icon = 'font-icon-menu-files';
     private static $db = [
         'Text' => 'HTMLText',
         'BackgroundColor' => 'Text',
-        
+        'Border' => 'Boolean',
+        'TextPosition' => 'Boolean',
     ];
 
     private static $has_one = [
@@ -37,6 +38,8 @@ class ContentBlock extends BaseElement {
                 'bg-white' => 'White',
                 'bg-black' => 'Black',
             ])->setEmptyString('Select a background color'),
+            CheckboxField::create('TextPosition', 'Text right'),
+            CheckboxField::create('Border', 'Borders'),
         ]);
 
         return $fields;

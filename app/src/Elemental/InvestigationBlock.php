@@ -4,6 +4,7 @@ namespace App\Elements;
 
 use App\Pages\InvestigationPage;
 use DNADesign\Elemental\Models\BaseElement;
+use SilverStripe\Forms\NumericField;
 use SilverStripe\Forms\TextField;
 
 class InvestigationBlock extends BaseElement {
@@ -14,11 +15,17 @@ class InvestigationBlock extends BaseElement {
     private static $icon = 'font-icon-search';
     private static $db = [
         'Title' => 'Text',
+        'NuberOfInvestigationsShown' => 'Int'
     ];
 
     public function getCMSFields() {
         $fields = parent::getCMSFields();
 
+
+        $fields->addFieldsToTab('Root.Main', [
+            NumericField::create('NuberOfInvestigationsShown', 'Number of investigations that are displayed'),
+        ]);
+        
         return $fields;
     }
 
@@ -28,17 +35,6 @@ class InvestigationBlock extends BaseElement {
 
     public function getInvestigationList()
     {
-        $investigations  = InvestigationPage::get();
-        $InvestigationArray = [];
-
-        foreach ($investigations as $key => $value) {
-
-            $InvestigationArray[] = [
-                "title" => $value->Title,
-                "date" => $value->Date,
-            ];
-        }
-
-        return json_encode($InvestigationArray);
+        return InvestigationPage::get()->limit($this->NuberOfInvestigationsShown);
     }
 }

@@ -2,28 +2,32 @@
 
 namespace App\Elements;
 
+use App\Objects\Quote;
 use DNADesign\Elemental\Models\BaseElement;
-use SilverStripe\Forms\TextField;
+use SilverStripe\Forms\GridField\GridField;
 
 class QuotesBlock extends BaseElement {
     private static $table_name = "QuotesBlock";
     private static $singular_name = "Quotes block";
     private static $plural_name = 'QuotesBlock';
+    private static $inline_editable = false;
     private static $description = 'Quotes block';
     private static $icon = 'font-icon-edit-write';
     private static $db = [
-        'Quote' => 'Text',
-        'TextUnderQuote' => 'Text',
+        'Title' => 'Varchar(255)',
+    ];
+
+    private static $has_many = [
+        'Quotes' => Quote::class
     ];
 
     public function getCMSFields() {
         $fields = parent::getCMSFields();
 
-        $fields->removeByName('Title');
+        $fields->removeByName(['Quotes']);
 
         $fields->addFieldsToTab('Root.Main', [
-            TextField::create('Quote', 'Quote to display'),
-            TextField::create('TextUnderQuote', 'Text to display under quote'),
+            GridField::create('Quotes', 'Select quotes to display in block', $this->Quotes()),
         ]);
 
         return $fields;

@@ -19,9 +19,12 @@
         <title><% if $MetaTitle %>$MetaTitle<% else %>$Title<% end_if %></title>
     </head>
     <body id="app">
-        <main class="container py-3 space-y-10 lg:py-16">
+        <main class="py-3 space-y-10 lg:py-16">
             <% include Includes/Navigation %>
-            $Layout
+            <div>
+                $Layout
+            </div>
+            <% include Includes/Cookie %>
             <% include Includes/Footer %>
         </main>
     </body>

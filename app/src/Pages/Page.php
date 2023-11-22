@@ -9,5 +9,12 @@ namespace {
         private static $db = [];
 
         private static $has_one = [];
+
+        // public function processJoinForm()
+        // {
+    
+        //     $h = new PageController();
+        //     return($h->processJoinForm());
+        // }
     }
 }

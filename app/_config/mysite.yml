@@ -7,3 +7,21 @@ SilverStripe\Core\Manifest\ModuleManifest:
 Silverstripe\SiteConfig\SiteConfig:
   extensions:
     - App\Extensions\SiteConfigExtension
+
+SilverStripe\SpamProtection\Extension\FormSpamProtectionExtension:
+    default_spam_protector: UndefinedOffset\NoCaptcha\Forms\NocaptchaProtector
+
+UndefinedOffset\NoCaptcha\Forms\NocaptchaField:
+    site_key: "6Ldr368oAAAAAA7-rg5JiYW3jRFAfgMq4gtncJ33" #Your site key (required)
+    secret_key: "6Ldr368oAAAAACFmo7NKuI2q4L79ie0Am1WuK9a-" #Your secret key (required)
+    recaptcha_version: 2 # 2 or 3
+    minimum_score: 0.2 # minimum spam score to achieve. Any less is blocked
+    verify_ssl: true #Allows you to disable php-curl's SSL peer verification by setting this to false (optional, defaults to true)
+    default_theme: "light" #Default theme color (optional, light or dark, defaults to light)
+    default_type: "image" #Default captcha type (optional, image or audio, defaults to image)
+    default_size: "normal" #Default size (optional, normal, compact or invisible, defaults to normal)
+    default_badge: "bottomright" #Default badge position (bottomright, bottomleft or inline, defaults to bottomright)
+    default_handle_submit: true #Default setting for whether nocaptcha should handle form submission. See "Handling form submission" below.
+    proxy_server: "" #Your proxy server address (optional)
+    proxy_port: "" #Your proxy server address port (optional)
+    proxy_auth: "" #Your proxy server authentication information (optional)
