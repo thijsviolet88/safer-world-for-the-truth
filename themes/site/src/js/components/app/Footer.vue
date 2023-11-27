@@ -19,8 +19,15 @@ const scrollTarget = ref(null);
 
 const toggleCollapse = () => {    
     showCollapse.value = !showCollapse.value;
+
+    if(document.querySelector('main').style.padding !== 0) {
+        document.querySelector('main').style.padding = '0';
+    } else {
+        document.querySelector('main').style.padding = '400px';
+    }
+    document.querySelector('main').style.padding = '0';
     setTimeout(() => {
-        window.scrollTo({top: document.body.scrollHeight || document.documentElement.scrollHeight,behavior: 'smooth'});
+        window.scrollTo({top: document.body.scrollHeight || document.documentElement.scrollHeight, behavior: 'smooth'});
     }, 10);
 }
 </script>

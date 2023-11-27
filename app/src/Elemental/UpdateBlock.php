@@ -34,6 +34,6 @@ class UpdateBlock extends BaseElement {
 
     public function getUpdatesList()
     {
-        return Update::get()->limit($this->NuberOfUpdatesShown);
+        return UpdatePage::get()->limit($this->NuberOfUpdatesShown);
     }
 }

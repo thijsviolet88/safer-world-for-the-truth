@@ -8,3 +8,6 @@ $ElementalArea
         </h2>
     </header>
 </section>
+<section class="container">
+    <monument-list></monument-list>
+</section>

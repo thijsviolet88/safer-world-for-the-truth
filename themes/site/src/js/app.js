@@ -6,6 +6,8 @@ import IconChevron from "./components/icons/Chevron.vue"
 import IconCross from "./components/icons/Cross.vue"
 import IconLogo from "./components/icons/Logo.vue"
 import HamburgerMenu from "./components/app/HamburgerMenu.vue"
+import MonumentList from "./components/MonumentList.vue"
+import MonumentItem from "./components/MonumentItem.vue"
 
 createApp({
     components: {
@@ -14,7 +16,9 @@ createApp({
         IconChevron,
         IconCross,
         IconLogo,
-        HamburgerMenu
+        HamburgerMenu,
+        MonumentList,
+        MonumentItem
     }
 }).mount('#app');
 

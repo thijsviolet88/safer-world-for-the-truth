@@ -5,21 +5,21 @@
         </p>
         <% if $Locales %>
                 <nav class="primary">
-                    <select>
+                    <ul class="flex gap-x-2">
                         <% loop $Locales %>
                             <% if IsPublished %>
-                                <option class="{$LinkingMode} border font-thin text-grey p-2 uppercase">
+                                <li class="{$LinkingMode} border font-thin text-grey p-2 uppercase">
                                     <a href="$Link.ATT" <% if $LinkingMode != 'invalid' %>rel="alternate"
                                     hreflang="$HrefLang"<% end_if %>>$Title.XML</a>
-                                </option>
+                                </li>
                             <% end_if %>
                         <% end_loop %>
-                    </select>
+                    </ul>
                 </nav>
             </div>
         <% end_if %>
     </header>
-    <a href="/">
+    <a class="inline-block w-full" href="/">
         <icon-Logo/></icon-Logo>
     </a>
     <div class="flex items-center gap-x-10 lg:justify-between">

@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "@vueuse/core": "^10.2.1",
+    "axios": "^1.6.2",
     "tailwindcss-animated": "^1.0.1",
     "vue": "^3.3.4",
     "vue-router": "^4.2.4"

@@ -19,7 +19,7 @@
         <title><% if $MetaTitle %>$MetaTitle<% else %>$Title<% end_if %></title>
     </head>
     <body id="app">
-        <main class="space-y-10">
+        <main class="space-y-10 pb-40">
             <% include Includes/Navigation %>
             <div>
                 $Layout

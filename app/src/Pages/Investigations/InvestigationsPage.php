@@ -3,10 +3,8 @@
 namespace App\Pages;
 
 use Page;
-use SilverStripe\AssetAdmin\Forms\UploadField;
-use SilverStripe\Forms\DateField;
-use SilverStripe\Forms\TextField;
-use SilverStripe\Assets\Image;
+
+use App\Objects\Investigation;
 
 class InvestigationsPage extends Page {
     private static $table_name = 'InvestigationsPage';

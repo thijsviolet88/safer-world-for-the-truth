@@ -35,6 +35,6 @@ class InvestigationBlock extends BaseElement {
 
     public function getInvestigationList()
     {
-        return Investigation::get()->limit($this->NuberOfInvestigationsShown);
+        return InvestigationPage::get()->limit($this->NuberOfInvestigationsShown);
     }
 }
