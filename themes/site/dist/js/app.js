@@ -16842,6 +16842,39 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./themes/site/src/js/components/MonumentHeader.vue?vue&type=script&setup=true&lang=js":
+/*!*************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./themes/site/src/js/components/MonumentHeader.vue?vue&type=script&setup=true&lang=js ***!
+  \*************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  __name: 'MonumentHeader',
+  props: {
+    journalistsKilled: Number
+  },
+  setup: function setup(__props, _ref) {
+    var __expose = _ref.expose;
+    __expose();
+    var props = __props;
+    var __returned__ = {
+      props: props
+    };
+    Object.defineProperty(__returned__, '__isScriptSetup', {
+      enumerable: false,
+      value: true
+    });
+    return __returned__;
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./themes/site/src/js/components/MonumentItem.vue?vue&type=script&setup=true&lang=js":
 /*!***********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./themes/site/src/js/components/MonumentItem.vue?vue&type=script&setup=true&lang=js ***!
@@ -16856,7 +16889,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   __name: 'MonumentItem',
   props: {
-    journalist: Object
+    journalist: Object,
+    index: Number
   },
   setup: function setup(__props, _ref) {
     var __expose = _ref.expose;
@@ -16890,11 +16924,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _vueuse_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @vueuse/core */ "./node_modules/@vueuse/core/index.mjs");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/lib/axios.js");
+/* harmony import */ var _vueuse_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @vueuse/core */ "./node_modules/@vueuse/core/index.mjs");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "./node_modules/axios/lib/axios.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 /* harmony import */ var _icons_Spin_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./icons/Spin.vue */ "./themes/site/src/js/components/icons/Spin.vue");
 /* harmony import */ var _MonumentItem_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./MonumentItem.vue */ "./themes/site/src/js/components/MonumentItem.vue");
+/* harmony import */ var _MonumentHeader_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./MonumentHeader.vue */ "./themes/site/src/js/components/MonumentHeader.vue");
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
@@ -16906,7 +16941,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 
 
-var url = 'https://api.cpj.org/v1/persons/?page=1&pagesize=10';
+
+var url = 'https://api.cpj.org/v1/persons/';
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   __name: 'MonumentList',
   setup: function setup(__props, _ref) {
@@ -16914,9 +16950,10 @@ var url = 'https://api.cpj.org/v1/persons/?page=1&pagesize=10';
     __expose();
     var monument = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(null);
     var data = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)([]);
-    var page = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(1);
+    var page = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(0);
     var loading = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(false);
-    var _useWindowScroll = (0,_vueuse_core__WEBPACK_IMPORTED_MODULE_3__.useWindowScroll)({
+    var journalistsKilled = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(0);
+    var _useWindowScroll = (0,_vueuse_core__WEBPACK_IMPORTED_MODULE_4__.useWindowScroll)({
         behavior: 'smooth'
       }),
       x = _useWindowScroll.x,
@@ -16928,18 +16965,19 @@ var url = 'https://api.cpj.org/v1/persons/?page=1&pagesize=10';
     });
     var fetchData = function fetchData() {
       loading.value = true;
-      axios__WEBPACK_IMPORTED_MODULE_4__["default"].get(url, {
+      axios__WEBPACK_IMPORTED_MODULE_5__["default"].get(url, {
         params: {
-          page: page,
+          page: page.value,
           pageSize: 12
         }
       }).then(function (response) {
         console.log(response.data);
+        journalistsKilled.value = response.data.meta.pageCount * response.data.meta.pageSize;
         data.value = [].concat(_toConsumableArray(data.value), _toConsumableArray(response.data.data));
-        page.value++;
       })["catch"](function (error) {
         console.error('Error fetching data:', error);
       })["finally"](function () {
+        page.value++;
         loading.value = false;
         window.scrollTo();
       });
@@ -16953,20 +16991,22 @@ var url = 'https://api.cpj.org/v1/persons/?page=1&pagesize=10';
       url: url,
       page: page,
       loading: loading,
+      journalistsKilled: journalistsKilled,
       x: x,
       y: y,
       fetchData: fetchData,
       get useWindowScroll() {
-        return _vueuse_core__WEBPACK_IMPORTED_MODULE_3__.useWindowScroll;
+        return _vueuse_core__WEBPACK_IMPORTED_MODULE_4__.useWindowScroll;
       },
       get axios() {
-        return axios__WEBPACK_IMPORTED_MODULE_4__["default"];
+        return axios__WEBPACK_IMPORTED_MODULE_5__["default"];
       },
       onMounted: vue__WEBPACK_IMPORTED_MODULE_0__.onMounted,
       ref: vue__WEBPACK_IMPORTED_MODULE_0__.ref,
       watch: vue__WEBPACK_IMPORTED_MODULE_0__.watch,
       IconSpin: _icons_Spin_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-      MonumentItem: _MonumentItem_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+      MonumentItem: _MonumentItem_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+      MonumentHeader: _MonumentHeader_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -17136,6 +17176,25 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./themes/site/src/js/components/MonumentHeader.vue?vue&type=template&id=e79e187a":
+/*!******************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./themes/site/src/js/components/MonumentHeader.vue?vue&type=template&id=e79e187a ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("header", null, " Since 1992, " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.journalistsKilled) + " journalists have been murdered. These are the men and women murdered for doing their job: finding the truth. ", 1 /* TEXT */);
+}
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./themes/site/src/js/components/MonumentItem.vue?vue&type=template&id=7a1688c9":
 /*!****************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./themes/site/src/js/components/MonumentItem.vue?vue&type=template&id=7a1688c9 ***!
@@ -17150,7 +17209,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "text-center"
+  "class": "text-center animate-fade animate-delay-300 animate-ease-linear transistion-all duration-300 hover:scale-110 cursor-pointer"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.journalist.fullName) + " " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.journalist.entries[0].coverages ? "was a journalist covering ".concat($setup.formattedConverages($props.journalist.entries[0].coverages), ".") : 'was a journalist.') + " On " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.journalist.entries[0].endDisplay) + " in " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.journalist.entries[0].location) + " " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.journalist.gender === 'Male' ? 'he' : 'she') + " was " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.journalist.entries[0].status.toLowerCase()) + " because of it. The ones responsible for his death are still at large.", 1 /* TEXT */)]);
@@ -17172,18 +17231,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "relative mt-20 h-[35rem] lg:grid lg:grid-cols-3 lg:gap-x-3 lg:gap-y-5",
+  "class": "relative mt-10 lg:mt-20 h-[35rem] flex flex-col lg:grid lg:grid-cols-3 lg:gap-x-3 gap-y-5",
   ref: "monument"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_1, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.data, function (journalist) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("section", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <MonumentHeader v-if=\"!loading\" :journalistsKilled=\"journalistsKilled\"/> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_1, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.data, function (journalist, index) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["MonumentItem"], {
-      journalist: journalist
-    }, null, 8 /* PROPS */, ["journalist"]);
+      journalist: journalist,
+      index: index
+    }, null, 8 /* PROPS */, ["journalist", "index"]);
   }), 256 /* UNKEYED_FRAGMENT */))], 512 /* NEED_PATCH */), $setup.loading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["IconSpin"], {
     key: 0,
-    "class": "fixed inset-y-0 inset-x-0"
-  })) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 64 /* STABLE_FRAGMENT */);
+    "class": "fixed bottom-10 inset-x-0 scale-50"
+  })) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]);
 }
 
 /***/ }),
@@ -19559,6 +19619,34 @@ if (false) {}
 
 /***/ }),
 
+/***/ "./themes/site/src/js/components/MonumentHeader.vue":
+/*!**********************************************************!*\
+  !*** ./themes/site/src/js/components/MonumentHeader.vue ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _MonumentHeader_vue_vue_type_template_id_e79e187a__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MonumentHeader.vue?vue&type=template&id=e79e187a */ "./themes/site/src/js/components/MonumentHeader.vue?vue&type=template&id=e79e187a");
+/* harmony import */ var _MonumentHeader_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./MonumentHeader.vue?vue&type=script&setup=true&lang=js */ "./themes/site/src/js/components/MonumentHeader.vue?vue&type=script&setup=true&lang=js");
+/* harmony import */ var _node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+const __exports__ = /*#__PURE__*/(0,_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_MonumentHeader_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_MonumentHeader_vue_vue_type_template_id_e79e187a__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"themes/site/src/js/components/MonumentHeader.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
 /***/ "./themes/site/src/js/components/MonumentItem.vue":
 /*!********************************************************!*\
   !*** ./themes/site/src/js/components/MonumentItem.vue ***!
@@ -19791,6 +19879,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./themes/site/src/js/components/MonumentHeader.vue?vue&type=script&setup=true&lang=js":
+/*!*********************************************************************************************!*\
+  !*** ./themes/site/src/js/components/MonumentHeader.vue?vue&type=script&setup=true&lang=js ***!
+  \*********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_MonumentHeader_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_MonumentHeader_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./MonumentHeader.vue?vue&type=script&setup=true&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./themes/site/src/js/components/MonumentHeader.vue?vue&type=script&setup=true&lang=js");
+ 
+
+/***/ }),
+
 /***/ "./themes/site/src/js/components/MonumentItem.vue?vue&type=script&setup=true&lang=js":
 /*!*******************************************************************************************!*\
   !*** ./themes/site/src/js/components/MonumentItem.vue?vue&type=script&setup=true&lang=js ***!
@@ -19867,6 +19971,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   render: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Cookie_vue_vue_type_template_id_2be5081a__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Cookie_vue_vue_type_template_id_2be5081a__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Cookie.vue?vue&type=template&id=2be5081a */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./themes/site/src/js/components/Cookie.vue?vue&type=template&id=2be5081a");
+
+
+/***/ }),
+
+/***/ "./themes/site/src/js/components/MonumentHeader.vue?vue&type=template&id=e79e187a":
+/*!****************************************************************************************!*\
+  !*** ./themes/site/src/js/components/MonumentHeader.vue?vue&type=template&id=e79e187a ***!
+  \****************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_MonumentHeader_vue_vue_type_template_id_e79e187a__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_MonumentHeader_vue_vue_type_template_id_e79e187a__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./MonumentHeader.vue?vue&type=template&id=e79e187a */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./themes/site/src/js/components/MonumentHeader.vue?vue&type=template&id=e79e187a");
 
 
 /***/ }),

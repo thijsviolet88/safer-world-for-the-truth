@@ -815,6 +815,10 @@ input[type="submit"]:hover {
   top: 0px;
   bottom: 0px;
 }
+.inset-y-32 {
+  top: 8rem;
+  bottom: 8rem;
+}
 .-bottom-1 {
   bottom: -0.25rem;
 }
@@ -838,6 +842,12 @@ input[type="submit"]:hover {
 }
 .top-5 {
   top: 1.25rem;
+}
+.bottom-32 {
+  bottom: 8rem;
+}
+.bottom-10 {
+  bottom: 2.5rem;
 }
 .z-10 {
   z-index: 10;
@@ -910,23 +920,11 @@ input[type="submit"]:hover {
 .h-96 {
   height: 24rem;
 }
-.h-full {
-  height: 100%;
-}
-.h-\[100vh\] {
-  height: 100vh;
-}
-.h-\[10rem\] {
-  height: 10rem;
-}
-.h-\[25remrem\] {
-  height: 25remrem;
-}
-.h-\[25rem\] {
-  height: 25rem;
-}
 .h-\[35rem\] {
   height: 35rem;
+}
+.h-full {
+  height: 100%;
 }
 .w-1\/2 {
   width: 50%;
@@ -958,8 +956,22 @@ input[type="submit"]:hover {
 .max-w-2xl {
   max-width: 42rem;
 }
+.-translate-y-6 {
+  --tw-translate-y: -1.5rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
 .rotate-180 {
   --tw-rotate: 180deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.scale-75 {
+  --tw-scale-x: .75;
+  --tw-scale-y: .75;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.scale-50 {
+  --tw-scale-x: .5;
+  --tw-scale-y: .5;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 .transform {
@@ -1109,9 +1121,6 @@ input[type="submit"]:hover {
   border-top-width: calc(2px * calc(1 - var(--tw-divide-y-reverse)));
   border-bottom-width: calc(2px * var(--tw-divide-y-reverse));
 }
-.overflow-y-scroll {
-  overflow-y: scroll;
-}
 .rounded-full {
   border-radius: 9999px;
 }
@@ -1132,6 +1141,10 @@ input[type="submit"]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
+.bg-purple {
+  --tw-bg-opacity: 1;
+  background-color: rgb(56 39 143 / var(--tw-bg-opacity));
+}
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -1145,6 +1158,9 @@ input[type="submit"]:hover {
 }
 .p-2 {
   padding: 0.5rem;
+}
+.p-20 {
+  padding: 5rem;
 }
 .p-3 {
   padding: 0.75rem;
@@ -1166,6 +1182,10 @@ input[type="submit"]:hover {
 .px-5 {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
+}
+.px-56 {
+  padding-left: 14rem;
+  padding-right: 14rem;
 }
 .px-6 {
   padding-left: 1.5rem;
@@ -1201,12 +1221,6 @@ input[type="submit"]:hover {
 }
 .pt-6 {
   padding-top: 1.5rem;
-}
-.pb-20 {
-  padding-bottom: 5rem;
-}
-.pb-\[30rem\] {
-  padding-bottom: 30rem;
 }
 .text-center {
   text-align: center;
@@ -1451,6 +1465,11 @@ input[type="submit"]:hover {
   --tw-translate-y: -0.25rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+.hover\:scale-110:hover {
+  --tw-scale-x: 1.1;
+  --tw-scale-y: 1.1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
 .hover\:bg-purple:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(56 39 143 / var(--tw-bg-opacity));
@@ -1489,8 +1508,15 @@ input[type="submit"]:hover {
   font-size: 1.5rem;
   line-height: 2rem;
 }
+.prose-p\:text-base :is(:where(p):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
 .prose-p\:font-light :is(:where(p):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
   font-weight: 300;
+}
+.prose-p\:leading-relaxed :is(:where(p):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  line-height: 1.625;
 }
 .prose-a\:p-1 :is(:where(a):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
   padding: 0.25rem;
@@ -1518,6 +1544,10 @@ input[type="submit"]:hover {
   .lg\:my-14 {
     margin-top: 3.5rem;
     margin-bottom: 3.5rem;
+  }
+
+  .lg\:mt-20 {
+    margin-top: 5rem;
   }
 
   .lg\:inline-block {
@@ -1585,10 +1615,6 @@ input[type="submit"]:hover {
   .lg\:gap-x-3 {
     -moz-column-gap: 0.75rem;
          column-gap: 0.75rem;
-  }
-
-  .lg\:gap-y-5 {
-    row-gap: 1.25rem;
   }
 
   .lg\:space-y-10 > :not([hidden]) ~ :not([hidden]) {

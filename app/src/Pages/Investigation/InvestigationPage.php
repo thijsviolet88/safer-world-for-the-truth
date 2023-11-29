@@ -42,8 +42,9 @@ class InvestigationPage extends Page {
         ]);
 
         $fields->addFieldsToTab('Root.Content', [
-            TextField::create('Header', 'Title of the investigation'),
-            HTMLEditorField::create('Content', 'Title of the investigation'),
+            TextField::create('Header', 'Header of the investigation'),
+            TextField::create('Intro', 'Intro text for the investigation'),
+            HTMLEditorField::create('Content', 'Content for page of the investigation'),
         ]);
 
         return $fields;
